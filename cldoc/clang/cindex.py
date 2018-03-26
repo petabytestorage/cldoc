@@ -571,7 +571,8 @@ class BaseEnumeration(object):
     @classmethod
     def from_id(cls, id):
         if id >= len(cls._kinds) or cls._kinds[id] is None:
-            raise ValueError,'Unknown template argument kind %d' % id
+            return '?'
+#            raise ValueError,'Unknown template argument kind %d' % id
         return cls._kinds[id]
 
     def __repr__(self):
